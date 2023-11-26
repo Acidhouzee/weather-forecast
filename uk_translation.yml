@@ -1,0 +1,3 @@
+files:
+  - source: /weather-app/blob/main/README.md
+    translation: weather-app/%two_letters_code%/%original_file_name%
