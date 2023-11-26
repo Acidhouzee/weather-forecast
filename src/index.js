@@ -5,10 +5,10 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <BrowserRouter basename='/weather-forecast/'>
     <App />
   </BrowserRouter>
 );
 
 
-//<BrowserRouter basename='/weather-app/'> use this for github-pages
+//<BrowserRouter basename='/weather-forecast/'> use this for github-pages
