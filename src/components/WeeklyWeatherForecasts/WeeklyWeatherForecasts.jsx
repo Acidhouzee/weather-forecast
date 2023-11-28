@@ -2,6 +2,7 @@ import { getCurrentWeather } from 'API/WeatherAPI';
 import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import WeeklyWeather from './WeeklyWeather';
+import { HeaderGlobalStyles } from 'components/Header/Header.styled';
 
 
 const WeeklyWeatherForecasts = ({data}) => {
@@ -20,12 +21,11 @@ const WeeklyWeatherForecasts = ({data}) => {
 
   return (
     <div>
-
       {weeklyWeather && data ? (
-        <div>
+        <div className='content-wrap'>
           <Header weather={data}><h1>{data.location.name}</h1></Header>
           <WeeklyWeather weather={weeklyWeather} />
-
+          <HeaderGlobalStyles />
         </div>
       ) : (
         <p>Loading...</p>

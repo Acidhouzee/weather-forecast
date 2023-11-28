@@ -5,11 +5,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { WeeklyWeatherStyles } from './WeeklyWeatherForecasts.styled';
 import { changeIcons } from 'helpers/ChangeIcons';
+import { testWeatherArr } from 'helpers/testData';
+import sunrise from '../../images/sunrise.svg'
+import sunset from '../../images/sunset.svg'
 
 const WeeklyWeather = ({weather}) => {
 
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
+
+  const testWeather = testWeatherArr;
 
   return (
     <>
@@ -20,8 +25,8 @@ const WeeklyWeather = ({weather}) => {
           ref={(slider2) => setNav2(slider2)}
           slidesToShow={4}
         >
-          {weather.forecast.forecastday.map(item =>
-            <div key={item.date_epoch}>
+          {testWeather.forecast.forecastday.map(item =>
+            <div className='weather-slide' key={item.date_epoch}>
               <p>{item.day.maxtemp_c}°</p>
               <img alt={item.day.condition.text} src={changeIcons(item.day.condition.icon)} />
               <p>{format( new Date(item.date), 'iii')}</p>
@@ -38,17 +43,34 @@ const WeeklyWeather = ({weather}) => {
           swipe={false}
           fade={true}
         >
-          {weather.forecast.forecastday.map(item =>
-            <div key={item.date_epoch}>
-              <p>Sunrise: {item.astro.sunrise}</p>
-              <p>Sunset: {item.astro.sunset}</p>
+          {testWeather.forecast.forecastday.map(item =>
+            <div className='sun-items' key={item.date_epoch}>
+              <div className='item'>
+                <img src={sunrise} alt="sunrise" />
+                <p>
+                  Sunrise: 
+                  <br />
+                  <span>
+                    {item.astro.sunrise}
+                  </span>
+                  </p>
+              </div>
+              <div className='item'>
+                <img src={sunset} alt="sunrise" />
+                <p>
+                  Sunset: 
+                  <br />
+                  <span>
+                    {item.astro.sunset}
+                  </span>
+                  </p>
+              </div>
             </div>
           )}
         </Slider>
       </div>
 
       <WeeklyWeatherStyles />
-
     </>
   );
 }
