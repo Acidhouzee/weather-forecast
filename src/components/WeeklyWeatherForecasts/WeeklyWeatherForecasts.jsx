@@ -18,7 +18,6 @@ const WeeklyWeatherForecasts = ({data}) => {
 
   }, [data]);
 
-
   return (
     <div>
       {weeklyWeather && data ? (
@@ -27,9 +26,7 @@ const WeeklyWeatherForecasts = ({data}) => {
           <WeeklyWeather weather={weeklyWeather} />
           <HeaderGlobalStyles />
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      ) : null}
     </div>
   );
 }

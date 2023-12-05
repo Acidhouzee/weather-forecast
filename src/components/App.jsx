@@ -24,6 +24,8 @@ export const App = () => {
         .then((data) => {
           if (data) {
             setWeatherData(data);
+            setTimeout(() => {
+            }, 1000)
           }
         });
     }
@@ -36,9 +38,6 @@ export const App = () => {
       <div className='content'>
         <header>
           <nav>
-            <NavLink to="/" end>
-              Home
-            </NavLink>
             <NavLink to="/dailyweather">Daily</NavLink>
             <NavLink to="/weeklyweather">Weekly</NavLink>
           </nav>

@@ -26,6 +26,7 @@ export const AppGlobalStyles = createGlobalStyle`
     transform: translate(-50%, -50%);
     width: 430px;
     height: 750px;
+    overflow: hidden;
     border-radius: 50px;
   }
 
@@ -55,5 +56,23 @@ export const AppGlobalStyles = createGlobalStyle`
   nav a:hover,
   nav a:focus {
     color: #DDB130;
+  }
+
+  @media(max-width: 767px) {
+    .content {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      border-radius: 0;
+      transform: none;
+      top: 0;
+      left: 0;
+    }
+    @media(max-width: 767px) {
+      main {
+        height: 45.6vw;
+        height: 100%;
+      }
+    }
   }
 `

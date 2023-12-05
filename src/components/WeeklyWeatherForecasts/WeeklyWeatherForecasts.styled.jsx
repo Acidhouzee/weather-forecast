@@ -57,7 +57,7 @@ export const WeeklyWeatherStyles = createGlobalStyle`
   .night .weather-slide {
     background: linear-gradient(38deg, rgba(30,31,38,1) 0%, rgba(40,54,85,1) 40%, rgba(77,100,141,1) 60%, rgba(208,225,249,1) 100%);
   }
-  
+
   .sun-items {
     margin-top: 43px;
     display: flex !important;
@@ -79,5 +79,14 @@ export const WeeklyWeatherStyles = createGlobalStyle`
   .item p span {
     font-size: 28px;
     font-weight: 600;
+  }
+
+  @media(max-width: 767px) {
+    .content-wrap {
+      padding-top: 0;
+    }
+    .header-icon {
+      height: 45.6vw;
+    }
   }
 `

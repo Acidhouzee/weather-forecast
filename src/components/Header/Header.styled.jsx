@@ -7,6 +7,7 @@ export const HeaderGlobalStyles = createGlobalStyle`
   .header-icon {
     display: block;
     width: 56%;
+    height: 240px;
     margin: auto;
   }
 

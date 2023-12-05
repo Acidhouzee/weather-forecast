@@ -14,8 +14,6 @@ const WeeklyWeather = ({weather}) => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
 
-  const testWeather = testWeatherArr;
-
   return (
     <>
       <h2>7-Days Forecasts</h2>
@@ -25,7 +23,7 @@ const WeeklyWeather = ({weather}) => {
           ref={(slider2) => setNav2(slider2)}
           slidesToShow={4}
         >
-          {testWeather.forecast.forecastday.map(item =>
+          {testWeatherArr.forecast.forecastday.map(item =>
             <div className='weather-slide' key={item.date_epoch}>
               <p>{item.day.maxtemp_c}°</p>
               <img alt={item.day.condition.text} src={changeIcons(item.day.condition.icon)} />
@@ -43,12 +41,12 @@ const WeeklyWeather = ({weather}) => {
           swipe={false}
           fade={true}
         >
-          {testWeather.forecast.forecastday.map(item =>
+          {testWeatherArr.forecast.forecastday.map(item =>
             <div className='sun-items' key={item.date_epoch}>
               <div className='item'>
                 <img src={sunrise} alt="sunrise" />
                 <p>
-                  Sunrise: 
+                  Sunrise:
                   <br />
                   <span>
                     {item.astro.sunrise}
@@ -58,7 +56,7 @@ const WeeklyWeather = ({weather}) => {
               <div className='item'>
                 <img src={sunset} alt="sunrise" />
                 <p>
-                  Sunset: 
+                  Sunset:
                   <br />
                   <span>
                     {item.astro.sunset}

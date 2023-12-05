@@ -43,8 +43,20 @@ export const DailyWeatherStyles = createGlobalStyle`
     width: 25%;
     text-align: center;
   }
+
   .weather-list li p {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  @media(max-width: 767px) {
+    .weather-day-wrap {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .daily-weather {
+      border-radius: 30px 30px 0 0;
+    }
   }
 `
