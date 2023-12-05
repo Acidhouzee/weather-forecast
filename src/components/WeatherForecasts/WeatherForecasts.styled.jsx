@@ -51,6 +51,7 @@ export const DailyWeatherStyles = createGlobalStyle`
 
   @media(max-width: 767px) {
     .weather-day-wrap {
+      display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;

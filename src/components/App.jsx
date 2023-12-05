@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { Home } from "pages/Home";
 import { useState, useEffect } from 'react'
 import { DailyWeather } from "pages/DailyWeather";
@@ -10,6 +10,7 @@ import { dayOrNightTheme } from 'helpers/DayOrNightTheme';
 export const App = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [location, setLocation] = useState(null);
+  const pageLocation = useLocation();
 
   useEffect(() => {
     getLocation()
@@ -33,12 +34,12 @@ export const App = () => {
 
   dayOrNightTheme();
 
-  const currentPath = window.location.pathname;
+  const { pathname } = pageLocation;
 
   return (
     <div className='wrapper'>
       <div className='content'>
-        {currentPath !== '/weather-forecast/' && ( // use '/' on local usage
+        {pathname !== '/weather-forecast/' && ( // use '/' on local usage
           <header>
             <nav>
               <NavLink to="/dailyweather">Daily</NavLink>

@@ -20,9 +20,6 @@ export const AppGlobalStyles = createGlobalStyle`
 
   .content {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     top: 50%;
     left: 50%;
     background: linear-gradient(222deg, rgba(43,97,109,1) 0%, rgba(165,195,207,1) 33%, rgba(196,223,230,1) 69%, rgba(102,165,173,1) 100%);
@@ -70,6 +67,7 @@ export const AppGlobalStyles = createGlobalStyle`
       transform: none;
       top: 0;
       left: 0;
+      overflow: auto;
     }
     @media(max-width: 767px) {
       main {

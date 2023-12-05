@@ -5,6 +5,7 @@ export const HomePageGlobalStyles = createGlobalStyle`
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    padding-top: 4.5vw;
     width: 70%;
     height: auto;
   }
