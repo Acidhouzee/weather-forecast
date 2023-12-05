@@ -33,20 +33,24 @@ export const App = () => {
 
   dayOrNightTheme();
 
+  const currentPath = window.location.pathname;
+
   return (
     <div className='wrapper'>
       <div className='content'>
-        <header>
-          <nav>
-            <NavLink to="/dailyweather">Daily</NavLink>
-            <NavLink to="/weeklyweather">Weekly</NavLink>
-          </nav>
-        </header>
+        {currentPath !== '/' && (
+          <header>
+            <nav>
+              <NavLink to="/dailyweather">Daily</NavLink>
+              <NavLink to="/weeklyweather">Weekly</NavLink>
+            </nav>
+          </header>
+        )}
         {weatherData && (
           <Routes>
             <Route path="/" element={<Home icon={weatherData.current.condition.icon} />} />
-              <Route path="/dailyweather" element={<DailyWeather data={weatherData} />} />
-              <Route path="/weeklyweather" element={<WeeklyWeather data={weatherData} />} />
+            <Route path="/dailyweather" element={<DailyWeather data={weatherData} />} />
+            <Route path="/weeklyweather" element={<WeeklyWeather data={weatherData} />} />
             {/*<Route path="*" element={} />*/}
           </Routes>
         )}
