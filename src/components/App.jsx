@@ -38,7 +38,7 @@ export const App = () => {
   return (
     <div className='wrapper'>
       <div className='content'>
-        {pathname !== 'weather-forecast/' && ( // use '/' on local usage
+        {pathname !== '/' && (
           <header>
             <nav>
               <NavLink to="/dailyweather">Daily</NavLink>
