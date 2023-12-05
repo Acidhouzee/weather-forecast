@@ -33,6 +33,7 @@ export const App = () => {
   dayOrNightTheme();
 
   const { pathname } = pageLocation;
+  console.log(pathname);
 
   return (
     <div className='wrapper'>
