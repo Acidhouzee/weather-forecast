@@ -25,8 +25,6 @@ export const App = () => {
         .then((data) => {
           if (data) {
             setWeatherData(data);
-            setTimeout(() => {
-            }, 1000)
           }
         });
     }
@@ -39,7 +37,7 @@ export const App = () => {
   return (
     <div className='wrapper'>
       <div className='content'>
-        {pathname !== '/weather-forecast/' && ( // use '/' on local usage
+        {pathname !== 'weather-forecast/' && ( // use '/' on local usage
           <header>
             <nav>
               <NavLink to="/dailyweather">Daily</NavLink>
