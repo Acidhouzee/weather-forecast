@@ -38,7 +38,7 @@ export const App = () => {
   return (
     <div className='wrapper'>
       <div className='content'>
-        {currentPath !== '/' && (
+        {currentPath !== '/weather-forecast/' && (
           <header>
             <nav>
               <NavLink to="/dailyweather">Daily</NavLink>
